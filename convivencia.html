@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convivencia - Seniors</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://img.icons8.com/stickers/100/groups.png" type="image/png">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <img src="logosalesianos.png" alt="Logo Politécnico">
+    </div>
+    <h1>Fotos de la Convivencia</h1>
+    <div class="header-right">
+      <img src="birrete.png" alt="Logo Promoción">
+    </div>
+  </header>
+
+<section class="galeria-fotos">
+    <img src="C:\Users\User\OneDrive\Documentos\MiPrimerLibrería\seniors memory\Fotos prueba\IMG_0093.JPG" alt="">
+    <img src="C:\Users\User\OneDrive\Documentos\MiPrimerLibrería\seniors memory\Fotos prueba\IMG_0678.JPG" alt="">
+    <img src="C:\Users\User\OneDrive\Documentos\MiPrimerLibrería\seniors memory\Fotos prueba\IMG_0896.JPG" alt="">
+    <img src="C:\Users\User\OneDrive\Documentos\MiPrimerLibrería\seniors memory\Fotos prueba\IMG_9860.JPG" alt="">
+    <img src="C:\Users\User\OneDrive\Documentos\MiPrimerLibrería\seniors memory\Fotos prueba\IMG_9945.JPG" alt="">
+  </section>
+
+  <footer>
+    <p><a href="index.html" style="color: white;">← Volver al inicio</a></p>
+  </footer>
+
+<div id="visor" class="visor">
+  <span class="cerrar">&times;</span>
+  <img class="imagen-grande" id="imagen-grande">
+</div>
+
+<script>
+  // Abre el visor al hacer clic en una foto
+  const galeria = document.querySelectorAll('.galeria-fotos img');
+  const visor = document.getElementById('visor');
+  const imagenGrande = document.getElementById('imagen-grande');
+  const cerrar = document.querySelector('.cerrar');
+
+  galeria.forEach(img => {
+    img.addEventListener('click', () => {
+      visor.style.display = 'flex';
+      imagenGrande.src = img.src;
+    });
+  });
+
+  cerrar.addEventListener('click', () => {
+    visor.style.display = 'none';
+  });
+
+  // Cierra si se hace clic fuera de la imagen
+  visor.addEventListener('click', (e) => {
+    if (e.target === visor) {
+      visor.style.display = 'none';
+    }
+  });
+</script>
+
+
+</body>
+</html>
